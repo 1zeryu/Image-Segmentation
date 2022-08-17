@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+SegByKmeans/Kmeans.py
+SegByKmeans/Seg.py
+SegByKmeans/__init__.py
+SegbyKmeans.egg-info/PKG-INFO
+SegbyKmeans.egg-info/SOURCES.txt
+SegbyKmeans.egg-info/dependency_links.txt
+SegbyKmeans.egg-info/requires.txt
+SegbyKmeans.egg-info/top_level.txt
