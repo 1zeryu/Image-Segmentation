@@ -30,7 +30,7 @@ class Kmeans(object):
         self.resultPath = path
     
     def readImage(self, imagePath):
-        imagePath = os.getcwd() + '/example/' + imagePath
+        imagePath = './' +'example/'+ imagePath
         print("input image...")
         img = cv2.imread(imagePath)
 
@@ -51,7 +51,7 @@ class Kmeans(object):
     def run(self, imageName, seed=0):
         image = self.readImage(imageName)
         result = self.model(image, seed)  
-        cv2.imwrite(self.resultPath+'\\'+imageName , result)
+        cv2.imwrite(self.resultPath+'\\'+ imageName, result)
         print("Successfully generated")
 
 
