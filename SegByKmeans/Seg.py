@@ -21,7 +21,7 @@ parser.add_argument("ImageName",type=str,help="select the image file name, must 
 parser.add_argument("-k",type=int,default=4,help="number of center")
 parser.add_argument("--MaxIter",type=int,default=30,help="max iterations of kmeans algorithm")
 parser.add_argument("--seed",type=int,default=0,help="seed for random center")
-parser.add_argument("--resultPath", default='.', help="Specify the path to the generated file, the default is the current folder")
+parser.add_argument("--resultPath", default='./result/', help="Specify the path to the generated file, the default is the current folder")
 
 args = parser.parse_args()
 
@@ -32,11 +32,11 @@ k = args.k
 max_iter = args.MaxIter
 seed = args.seed
 
-def quickSeg(imageName, k=4, resultPath='./result', max_iter=25, seed=0):
+def quickSeg(imageName, k=4, resultPath='./result/', max_iter=25, seed=0):
     solutions = Kmeans(k,resultPath, max_iter)
     solutions.run(imageName, seed=seed)
 
 if __name__ == "__main__":
-    quickSeg(quickSeg(imageName, k=k, resultPath=resultPath, 
+    quickSeg(imageName, k=k, resultPath=resultPath, 
                       max_iter=max_iter, seed=seed
-                      ))
+                      )

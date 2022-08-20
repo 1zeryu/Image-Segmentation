@@ -40,3 +40,50 @@ optional arguments:
                         the current folder
 ```
 
+## K-means Algorithm
+
+**Algorithm:** 
+
+1.  Initialize cluster cores
+2. Calculate the distance of the sample from the center of mass
+3. Attributing samples to their nearest center and calculating the mean of samples of the same class, update the mean to cluster cores
+4. Iterate repeatedly until the center of mass is stable or reach the max iterations
+
+ ![img](img/666d744e64337101b119f4fcc7d43ee7.png) 
+
+**Detail**:
+
+Calculate distance: $dist = |\alpha - \beta|_2$
+
+```python
+def minDisctance(dataset, centroidList):  # 传入数据集和选取的质心列表
+  clusterDict = dict()  
+  k = len(centroidList)  
+  for item in dataset:  
+    vec1 = item  # Vectors in the data
+    flag = -1  # Logo position
+    minDis = float("inf")   # Initialize to maximum value
+    for i in range(k):
+      vec2 = centroidList[i]   
+      distcance = calcudistance(vec1, vec2)   # Calculate Euclidean distance
+      if distance < minDis:   
+        minDis = distance  
+        flag = i  
+    if flag not in clusterDict.keys():
+      clusterDict.setdefault(flag,[])
+    clusterDict[flag].append(item)  
+  return clusterDict  # different category
+
+def calcudistance(vec1,vec2):  # input two vector
+  return np.sqrt(np.sum(np.square(vec1 - vec2)))
+```
+
+## Demo
+
+*Origin:*
+
+![1660962664519](img/1660962664519.png)
+
+*Target:*
+
+![1660962700534](img/1660962700534.png)
